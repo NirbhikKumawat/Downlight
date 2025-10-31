@@ -1,46 +1,46 @@
 #root{
-    height:100vh;
-    width: 100vw;
+    height:100vh; /*full viewport height 100% of visible browser*/
+    width: 100vw; /*similiar for width*/
 }
 #App{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+    display: flex; /*flex container*/
+    flex-direction: column;/*stacks vertically*/
+    height: 100%; /*fill entire height of parent*/
+    width: 100%; /*fill entire width*/
     background-color: #f4f4f4;
 }
 .toolbar{
-    display: flex;
-    padding: 10px;
+    display: flex;/*flex container*/
+    padding: 10px;/*10 px padding(top,right,bottom,left)*/
     background-color: #333;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    gap: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);/*0px right,2px down 5px blurr amount,r=0b=0g=0==black,0.2=opacity*/
+    gap: 10px;/*spacing between child elements*/
 }
 .btn{
-    padding: 8px 12px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+    padding: 8px 12px;/*8px top and bottom,12px left and right*/
+    font-size: 14px;/*size of font*/
+    font-weight: bold;/*boldness of font*/
+    color: #fff;/*text colour*/
+    background-color: #007bff;/*button background*/
+    border: none;/*no border*/
+    border-radius: 4px;/*4px round corners*/
+    cursor: pointer;/*cursor shape*/
+    transition: background-color 0.2s ease;/*animates background-color,for 0.2s ,speed changes slow to fast to slow to make more natural*/
 }
 .btn:hover{
-    background-color: #0056b3;
+    background-color: #0056b3;/*change background color on hover*/
 }
 .editor-pane{
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    resize: none;
+    flex-grow: 1;/*expands and fills all leftover space in vertical layout*/
+    border: none;/*borderless*/
+    outline: none;/*remove highlight border when focused*/
+    resize: none;/*prevents manual resizing*/
 
-    padding: 20px;
-    font-family: 'Courier New',Courier,monospace;
-    font-size: 16px;
-    line-height: 1.5;
+    padding: 20px;/*20 px padding on all sides*/
+    font-family: 'Courier New',Courier,monospace;/*fonts in priority*/
+    font-size: 16px;/*size of the font*/
+    line-height: 1.5;/*spacing between lines*/
     background-color: #ffffff;
-    color: #222;
-    overflow-y: auto;
+    color: #222;/*text colour editor*/
+    overflow-y: auto;/*adds vertical scrollbar only if content exceeds the visible height*/
 }
