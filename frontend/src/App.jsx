@@ -1,26 +1,26 @@
 import {useState} from 'react';
 import logo from './assets/images/logo-universal.png';
 import './App.css';
-import {Greet} from "../wailsjs/go/main/App";
+import {ReadFile} from "../wailsjs/go/main/App";
 
 function App() {
-    const [resultText, setResultText] = useState("Please enter your name below 👇");
-    const [name, setName] = useState('');
-    const updateName = (e) => setName(e.target.value);
-    const updateResultText = (result) => setResultText(result);
-
-    function greet() {
-        Greet(name).then(updateResultText);
+    const [fileContent,setFileContent] = useState("Click 'Open File' to load a .md file");
+    async function handleOpenFile(){
+        try{
+            const content = await ReadFile();
+            if (content !==""){
+                setFileContent(content);
+            }
+        }catch (err){
+            console.error("Error openine file:",err);
+        }
     }
-
-    return (
+    return(
         <div id="App">
-            <img src={logo} id="logo" alt="logo"/>
-            <div id="result" className="result">{resultText}</div>
-            <div id="input" className="input-box">
-                <input id="name" className="input" onChange={updateName} autoComplete="off" name="input" type="text"/>
-                <button className="btn" onClick={greet}>Greet</button>
+            <div className="toolbar">
+                <button className="btn" onClick={handleOpenFile}>Open File</button>
             </div>
+            <textarea className="editor-pane" value={fileContent} onChange={(e)=> setFileContent(e.target.value)}/>
         </div>
     )
 }
