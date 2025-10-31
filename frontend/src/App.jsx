@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import './App.css';
 import ReactMarkdown from 'react-markdown';// markdown previewer
+import rehypeHighlight  from "rehype-highlight";// linter for markdown
+import 'highlight.js/styles/github-dark.css';
 import {ReadFile,WriteFile} from "../wailsjs/go/main/App";// import functions from Go backend
 
 function App() {
@@ -32,7 +34,7 @@ function App() {
             <div className="main-content">
             <textarea className="editor-pane" value={fileContent} onChange={(e)=> setFileContent(e.target.value)}/>{/*changing content in tet area*/}
                 <div className="preview-pane">
-                    <ReactMarkdown>{fileContent}</ReactMarkdown>{/*preview content*/}
+                    <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{fileContent}</ReactMarkdown>{/*preview content*/}
                 </div>
             </div>
         </div>
