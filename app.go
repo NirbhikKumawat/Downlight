@@ -51,3 +51,27 @@ func (a *App) ReadFile() (string, error) {
 	}
 	return string(data), nil
 }
+func (a *App) WriteFile(content string) (string, error) {
+	selection, err := runtime.SaveFileDialog(a.ctx, runtime.SaveDialogOptions{
+		Title:           "Save Markdown file",
+		DefaultFilename: "markdown.md",
+		Filters: []runtime.FileFilter{
+			{
+				DisplayName: "Markdown (* md)",
+				Pattern:     "*.md",
+			},
+		},
+	})
+	if err != nil {
+		return "", err
+	}
+
+	if selection == "" {
+		return "Cancelled", nil
+	}
+	err = os.WriteFile(selection, []byte(content), 0644)
+	if err != nil {
+		return "", err
+	}
+	return "File saved successfully!", nil
+}

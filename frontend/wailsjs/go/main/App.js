@@ -9,3 +9,7 @@ export function Greet(arg1) {
 export function ReadFile() {
   return window['go']['main']['App']['ReadFile']();
 }
+
+export function WriteFile(arg1) {
+  return window['go']['main']['App']['WriteFile'](arg1);
+}
