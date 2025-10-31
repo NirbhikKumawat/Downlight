@@ -30,8 +30,8 @@ func (a *App) Greet(name string) string {
 }
 
 func (a *App) ReadFile() (string, error) {
-	selection, err := runtime.OpenFileDialog(a.ctx, runtime.OpenDialogOptions{
-		Title: "Open Markdown File",
+	selection, err := runtime.OpenFileDialog(a.ctx, runtime.OpenDialogOptions{ // open file open dialog
+		Title: "Open Markdown File", // title of the dialog box
 		Filters: []runtime.FileFilter{
 			{
 				DisplayName: "Markdown (*.md)",
@@ -45,20 +45,20 @@ func (a *App) ReadFile() (string, error) {
 	if selection == "" {
 		return "", nil
 	}
-	data, err := os.ReadFile(selection)
+	data, err := os.ReadFile(selection) // load whole file
 	if err != nil {
 		return "", err
 	}
 	return string(data), nil
 }
 func (a *App) WriteFile(content string) (string, error) {
-	selection, err := runtime.SaveFileDialog(a.ctx, runtime.SaveDialogOptions{
-		Title:           "Save Markdown file",
-		DefaultFilename: "markdown.md",
+	selection, err := runtime.SaveFileDialog(a.ctx, runtime.SaveDialogOptions{ // open save dialog
+		Title:           "Save Markdown file", //title of the dialog box
+		DefaultFilename: "markdown.md",        //default name of the file to be saved
 		Filters: []runtime.FileFilter{
 			{
-				DisplayName: "Markdown (* md)",
-				Pattern:     "*.md",
+				DisplayName: "Markdown (* md)", // show only markdown files
+				Pattern:     "*.md",            // extension .md
 			},
 		},
 	})
