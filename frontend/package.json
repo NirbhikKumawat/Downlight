@@ -10,7 +10,16 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-markdown": "8.0.7",
+    "remark-parse": "10.0.1",
+    "remark-rehype": "10.1.0",
+    "rehype-stringify": "9.0.4",
+    "unified": "10.1.2",
+    "vfile": "5.3.7",
+    "vfile-message": "3.1.4",
+    "unist-util-visit": "4.1.2",
+    "unist-util-stringify-position": "3.0.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
