@@ -4,6 +4,8 @@ import {main} from '../models';
 
 export function Greet(arg1:string):Promise<string>;
 
+export function OpenFiles():Promise<Array<main.FileData>>;
+
 export function ReadFile():Promise<main.FileData>;
 
 export function SaveFileAs(arg1:string):Promise<main.SaveData>;
