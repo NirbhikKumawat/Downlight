@@ -79,7 +79,7 @@ func (a *App) SaveFileAs(content string) (SaveData, error) {
 		return SaveData{Message: "Cancelled"}, nil
 	}
 
-	err := os.WriteFile(selection, []byte(content), 0644)
+	err = os.WriteFile(selection, []byte(content), 0644)
 	if err != nil {
 		return SaveData{}, err
 	}

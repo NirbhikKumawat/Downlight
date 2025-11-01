@@ -6,4 +6,8 @@ export function Greet(arg1:string):Promise<string>;
 
 export function ReadFile():Promise<main.FileData>;
 
+export function SaveFileAs(arg1:string):Promise<main.SaveData>;
+
+export function SaveFileToPath(arg1:string,arg2:string):Promise<string>;
+
 export function WriteFile(arg1:string):Promise<string>;

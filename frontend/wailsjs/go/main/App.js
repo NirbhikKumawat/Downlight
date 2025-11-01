@@ -10,6 +10,14 @@ export function ReadFile() {
   return window['go']['main']['App']['ReadFile']();
 }
 
+export function SaveFileAs(arg1) {
+  return window['go']['main']['App']['SaveFileAs'](arg1);
+}
+
+export function SaveFileToPath(arg1, arg2) {
+  return window['go']['main']['App']['SaveFileToPath'](arg1, arg2);
+}
+
 export function WriteFile(arg1) {
   return window['go']['main']['App']['WriteFile'](arg1);
 }

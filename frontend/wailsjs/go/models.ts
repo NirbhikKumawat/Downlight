@@ -14,6 +14,20 @@ export namespace main {
 	        this.path = source["path"];
 	    }
 	}
+	export class SaveData {
+	    message: string;
+	    path: string;
+	
+	    static createFrom(source: any = {}) {
+	        return new SaveData(source);
+	    }
+	
+	    constructor(source: any = {}) {
+	        if ('string' === typeof source) source = JSON.parse(source);
+	        this.message = source["message"];
+	        this.path = source["path"];
+	    }
+	}
 
 }
 
