@@ -6,7 +6,10 @@ import 'highlight.js/styles/github-dark.css';
 import {ReadFile,WriteFile} from "../wailsjs/go/main/App";// import functions from Go backend
 
 function App() {
-    const [fileContent,setFileContent] = useState("Click 'Open File' to load a .md file");
+    const [fileContent,setFileContent] = useState("");
+    function handleNewFile(){
+        setFileContent("");
+    }
     async function handleOpenFile(){
         try{
             const content = await ReadFile();// reads file
@@ -28,6 +31,7 @@ function App() {
     return(
         <div id="App">
             <div className="toolbar">
+                <button className="btn" onClick={handleNewFile}>New File</button>
                 <button className="btn" onClick={handleOpenFile}>Open File</button>
                 <button className="btn" onClick={handleSaveFile}>Save File</button>
             </div>

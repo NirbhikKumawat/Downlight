@@ -32,7 +32,8 @@
     background-color: #0056b3;/*change background color on hover*/
 }
 .editor-pane{
-    flex-grow: 1;/*expands and fills all leftover space in vertical layout*/
+    flex:1 ;
+    /*expands and fills all leftover space in vertical layout*/
     border: none;/*borderless*/
     outline: none;/*remove highlight border when focused*/
     resize: none;/*prevents manual resizing*/
